@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Vehicle Rental</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <script src="script.js"></script>
 </head>
 
@@ -17,28 +17,23 @@
 
         <div class="header-actions">
             <a href="index.html" class="btn-register">Home Page</a>
-            <a href="dashboard.html" class="btn-login">Login</a>
+            <a href="dashboard.html" class="btn-login">Dashboard</a>
             <a href="vehicles.html" class="btn-register">Our vehicles-choice</a>
         </div>
     </header>
 
     <main>
         <h2>Car, Van or Motorcycle: We support you every step of the way without compromise</h2>
-        <img src="resources/vehicles3.png" alt="photo of rental vehicle">
-        <form action="http://localhost:8083/reservations" method="POST">
+        <img src="assets/vehicles3.png" alt="photo of rental vehicle">
+        <form onsubmit="formAddReservation()">
+            <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
+                <label for="idClient">IdClient ?</label>
+                <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
+            </div>
             <ul>
-                <li>
-                    <label for="vehicles-choice">What type of vehicle do you need ?</label>
-                    <select id="vehicles-choice" name="vehicles-type">
-                        <option>Car</option>
-                        <option>Utility</option>
-                        <option>Motorcycle</option>
-                    </select>
-                </li>
-                <li>
-                    <label for="city">Withdrawal city ?</label>
-                    <input type="text" id="city" name="city" />
-                </li>
+                <select name="idVehicle" required id="vehiculeChoose">
+                    <option value="">Choose a vehicle</option>
+                </select>
                 <li>
                     <label for="start-location">Departure date :</label>
                     <input type="date" id="start-location" name="trip-start" value="2025-11-14" required />
@@ -50,22 +45,18 @@
                 <button type="submit">View vehicles</button>
             </ul>
         </form>
-        <img src="resources/vehicles1.png" alt="photo of rental vehicles">
-
+        <img src="assets/vehicles1.png" alt="photo of rental vehicles">
     </main>
-
     <footer>
         <footer>
             <p>&copy; 2025 Vehicle Rental. All rights reserved.</p>
             <nav class="footer-links">
-                <a href="login">Login</a>
-                <a href="register">Registration</a>
+                <a href="dashboard">Dashboard</a>
                 <a href="contact">Contact</a>
         </footer>
-
     </footer>
 
-    <script src="index.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>
