@@ -82,7 +82,6 @@ main img {
 
 /* -------- DASHBOARD -------- */
 .dashboard {
-    max-width: 900px;
     margin: 30px auto;
     background: #f0f0f0; /* gris clair */
     padding: 20px;
@@ -95,28 +94,28 @@ main img {
     color: #000;
 }
 
-#reservationsTable {
+.tableStyle {
     width: 100%;
     border-collapse: collapse;
 }
 
-#reservationsTable thead {
+.tableStyle thead {
     background: #000;
     color: #fff;
 }
 
-#reservationsTable th,
-#reservationsTable td {
+.tableStyle th,
+.tableStyle td {
     padding: 12px 15px;
     text-align: center;
     border-bottom: 1px solid #ccc;
 }
 
-#reservationsTable tbody tr:nth-child(even) {
+.tableStyle tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-#reservationsTable tbody tr:hover {
+.tableStyle tbody tr:hover {
     background: #ffeaea; /* léger rouge clair */
 }
 

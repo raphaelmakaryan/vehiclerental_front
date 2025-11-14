@@ -22,6 +22,22 @@ async function apiGetVehicleWithId(id) {
         })
 }
 
+async function apiGetVehicle() {
+    return await fetch("http://localhost:8080/vehicles")
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
+async function apiGetClients() {
+    return await fetch("http://localhost:8080/clients")
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
 async function transformData(data) {
     let newData = []
     for (let index = 0; index < data.length; index++) {
@@ -69,8 +85,62 @@ function displayReservation(data) {
     }
 }
 
+function displayVehicle(data) {
+    if (data.length >= 1) {
+        let container = document.getElementById("listOfVehicles")
+        data.forEach(element => {
+            container.innerHTML += `
+            <td>${element.id}</td>
+            <td>${element.type}</td>
+            <td>${element.model}</td>
+            <td>${element.color}</td>
+            <td>${element.cylinder}</td>
+            <td>${element.horsePower}</td>
+            <td>${element.volume}</td>
+            <td>${element.registration}</td>
+            <td>${element.defaultPrice}</td>
+            <td>${element.pricePerKilometer}</td>
+            <td>
+                <button class="edit">Modifier</button>
+                <button class="delete">Supprimer</button>
+            </td>`
+                ;
+        });
+    }
+}
+
+function displayClients(data) {
+    if (data.length >= 1) {
+        let container = document.getElementById("listOfClients")
+        data.forEach(element => {
+            container.innerHTML += `
+            <td>${element.id}</td>
+            <td>${element.firstName}</td>
+            <td>${element.lastName}</td>
+            <td>${element.numberLicense}</td>
+            <td>${element.birthday}</td>
+            <td>${element.obtaining_license}</td>
+            <td>
+                <button class="edit">Modifier</button>
+                <button class="delete">Supprimer</button>
+            </td>`
+                ;
+        });
+    }
+}
+
 async function reservation() {
     displayReservation(await transformData(await apiGetReservation()))
 }
 
+async function vehicle() {
+    displayVehicle(await apiGetVehicle())
+}
+
+async function clients() {
+    displayClients(await apiGetClients())
+}
+
 reservation()
+vehicle()
+clients()
