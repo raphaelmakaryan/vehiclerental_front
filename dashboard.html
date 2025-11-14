@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Réservations</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -17,29 +18,12 @@
 
         <div class="header-actions">
             <a href="index.html" class="btn-register">Home Page</a>
-            <a href="dashboard.html" class="btn-login">Dashboard</a>
             <a href="vehicles.html" class="btn-register">Our vehicles-choice</a>
+            <a href="dashboard.html" class="btn-login">Dashboard</a>
         </div>
     </header>
 
     <main>
-        <!-- Ajouter une réservation -->
-        <section>
-            <h2>Adding a reservation</h2>
-            <form id="addReservationForm" onsubmit="formAddReservation()">
-                <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
-                <select name="idVehicle" required id="vehiculeChoose">
-                    <option value="">Choose a vehicle</option>
-                </select>
-                <input type="date" name="startReservation" id="startReservation" required>
-                <input type="date" name="endReservation" id="endReservation" required>
-                <input type="number" name="estimatedKm" placeholder="Estimation des kilometres" id="estimatedKm"
-                    required value="10">
-                <button type="submit">Add</button>
-            </form>
-        </section>
-
-        <!-- Liste des réservations -->
         <section class="dashboard">
             <h2>List of reservations</h2>
             <table id="reservationsTable">

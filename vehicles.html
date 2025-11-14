@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicles available</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -16,8 +17,8 @@
 
         <div class="header-actions">
             <a href="index.html" class="btn-register">Home Page</a>
-            <a href="dashboard.html" class="btn-login">Dashboard</a>
             <a href="vehicles.html" class="btn-register">Our vehicles-choice</a>
+            <a href="dashboard.html" class="btn-login">Dashboard</a>
         </div>
     </header>
 
@@ -31,57 +32,21 @@
         <!-- Section Voitures -->
         <section class="vehicle-section">
             <h2>Cars</h2>
-            <div class="vehicle-cards">
-                <div class="vehicle-card">
-                    <img src="assets/clio.png" alt="Voiture 1">
-                    <h3>Renault Clio</h3>
-                    <p>Small, economical and comfortable city car.</p>
-                    <button>To book</button>
-                </div>
-                <div class="vehicle-card">
-                    <img src="assets/mercedes.png" alt="Voiture 2">
-                    <h3>Mercedes CLA</h3>
-                    <p>A comfortable and elegant car for all your journeys.</p>
-                    <button>To book</button>
-                </div>
+            <div class="vehicle-cards" id="mainVehicleCar">
             </div>
         </section>
 
         <!-- Section Motos -->
         <section class="vehicle-section">
             <h2>Motos</h2>
-            <div class="vehicle-cards">
-                <div class="vehicle-card">
-                    <img src="assets/yamaha.png" alt="Moto 1">
-                    <h3>Yamaha MT-07</h3>
-                    <p>Agile and fast for urban and road journeys.</p>
-                    <button>To book</button>
-                </div>
-                <div class="vehicle-card">
-                    <img src="assets/xadv.png" Moto 2">
-                    <h3>XADV</h3>
-                    <p>Sporty and comfortable, perfect for adventure.</p>
-                    <button>To book</button>
-                </div>
+            <div class="vehicle-cards" id="mainVehicleMoto">
             </div>
         </section>
 
         <!-- Section Utilitaires -->
         <section class="vehicle-section">
             <h2>Utilities</h2>
-            <div class="vehicle-cards">
-                <div class="vehicle-card">
-                    <img src="assets/trafic.png" alt="Utilitaire 1">
-                    <h3>Renault trafic</h3>
-                    <p>Perfect for transporting your goods easily.</p>
-                    <button>To book</button>
-                </div>
-                <div class="vehicle-card">
-                    <img src="assets/sprinter.png" alt="Utilitaire 2">
-                    <h3>Mercedes Sprinter</h3>
-                    <p>Large volume, ideal for moving or delivery.</p>
-                    <button>To book</button>
-                </div>
+            <div class="vehicle-cards" id="mainVehicleUtilities">
             </div>
         </section>
     </main>
@@ -89,6 +54,8 @@
     <footer>
         <p>&copy; 2025 Vehicle Rental. All rights reserved.</p>
     </footer>
+
+    <script src="js/vehicles.js"></script>
 </body>
 
 </html>

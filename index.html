@@ -2,7 +2,8 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Rental</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="script.js"></script>
@@ -17,8 +18,8 @@
 
         <div class="header-actions">
             <a href="index.html" class="btn-register">Home Page</a>
-            <a href="dashboard.html" class="btn-login">Dashboard</a>
             <a href="vehicles.html" class="btn-register">Our vehicles-choice</a>
+            <a href="dashboard.html" class="btn-login">Dashboard</a>
         </div>
     </header>
 
@@ -26,24 +27,41 @@
         <h2>Car, Van or Motorcycle: We support you every step of the way without compromise</h2>
         <img src="assets/vehicles3.png" alt="photo of rental vehicle">
         <form onsubmit="formAddReservation()">
-            <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
-                <label for="idClient">IdClient ?</label>
-                <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
+            <div style="display: flex;flex-direction: column; align-items: center;">
+                <h2>Reservation</h2>
             </div>
-            <ul>
-                <select name="idVehicle" required id="vehiculeChoose">
-                    <option value="">Choose a vehicle</option>
-                </select>
-                <li>
-                    <label for="start-location">Departure date :</label>
-                    <input type="date" id="start-location" name="trip-start" value="2025-11-14" required />
-                </li>
-                <li>
-                    <label for="end-location">Return date :</label>
-                    <input type="date" id="end-location" name="trip-end" value="2025-11-14" required />
-                </li>
-                <button type="submit">View vehicles</button>
-            </ul>
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="idClient">IdClient ?</label>
+                    <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="vehiculeChoose">Choissiez le véhicule</label>
+                    <select name="idVehicle" required id="vehiculeChoose">
+                        <option value="">Choose a vehicle</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="startReservation">Departure date :</label>
+                    <input type="date" name="startReservation" id="startReservation" required>
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="endReservation">Return date :</label>
+                    <input type="date" name="endReservation" id="endReservation" required>
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="estimatedKm">Estimated Km :</label>
+                    <input type="number" name="estimatedKm" placeholder="Estimation des kilometres" id="estimatedKm"
+                        required value="10">
+                </div>
+            </div>
+
+            <button type="submit">Create a reservations</button>
         </form>
         <img src="assets/vehicles1.png" alt="photo of rental vehicles">
     </main>
