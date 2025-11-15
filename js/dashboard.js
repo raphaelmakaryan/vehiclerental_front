@@ -38,6 +38,22 @@ async function apiGetClients() {
         })
 }
 
+async function apiGetMaintenance() {
+    return await fetch("http://localhost:8080/maintenance")
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
+async function apiGetUnavailability() {
+    return await fetch("http://localhost:8080/unavailability")
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
 async function transformData(data) {
     let newData = []
     for (let index = 0; index < data.length; index++) {
@@ -129,18 +145,47 @@ function displayClients(data) {
     }
 }
 
-async function reservation() {
+function displayMaintenance(data) {
+    if (data.length >= 1) {
+        let container = document.getElementById("listOfMaintenance")
+        data.forEach(element => {
+            container.innerHTML += `
+            <td>${element.id}</td>
+            <td>${element.idVehicule}</td>
+            <td>${element.idUnavailability}</td>
+            <td>
+                <button class="edit">Modifier</button>
+                <button class="delete">Supprimer</button>
+            </td>`
+                ;
+        });
+    }
+}
+
+function displayUnavailability(data) {
+    if (data.length >= 1) {
+        let container = document.getElementById("listOfUnavailability")
+        data.forEach(element => {
+            container.innerHTML += `
+            <td>${element.id}</td>
+            <td>${element.typeVehicle}</td>
+            <td>${element.description}</td>
+            <td>${element.time} days</td>
+            <td>
+                <button class="edit">Modifier</button>
+                <button class="delete">Supprimer</button>
+            </td>`
+                ;
+        });
+    }
+}
+
+async function allData() {
     displayReservation(await transformData(await apiGetReservation()))
-}
-
-async function vehicle() {
     displayVehicle(await apiGetVehicle())
-}
-
-async function clients() {
     displayClients(await apiGetClients())
+    displayMaintenance(await apiGetMaintenance())
+    displayUnavailability(await apiGetUnavailability())
 }
 
-reservation()
-vehicle()
-clients()
+allData()
