@@ -26,7 +26,7 @@ function displayCar(data) {
                     <img src="assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
-                    <button>To book</button>
+                    <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
                 </div>
             `;
             newIndex++
@@ -45,7 +45,7 @@ function displayMoto(data) {
                     <img src="assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
-                    <button>To book</button>
+                    <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
                 </div>
             `;
             newIndex++
@@ -64,7 +64,7 @@ function displayUtility(data) {
                     <img src="assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
-                    <button>To book</button>
+                    <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
                 </div>
             `;
             newIndex++
@@ -73,6 +73,10 @@ function displayUtility(data) {
 }
 async function vehicle() {
     displayVehicle(await apiGetVehicle())
+}
+
+function chooseBookVehicle(id) {
+    console.log(id)
 }
 
 vehicle()
