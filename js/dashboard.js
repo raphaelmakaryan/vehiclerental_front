@@ -6,6 +6,27 @@ async function apiGetReservation() {
         })
 }
 
+async function apiDeleteReservation(id) {
+    return await fetch("http://localhost:8080/reservations/" + id, {
+        method: "DELETE",
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        mode: 'cors'
+    })
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
+
+async function apiGetClients() {
+    return await fetch("http://localhost:8080/clients")
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
 async function apiGetClientWithId(id) {
     return await fetch("http://localhost:8080/clients/" + id)
         .then(res => res.json())
@@ -30,14 +51,6 @@ async function apiGetVehicle() {
         })
 }
 
-async function apiGetClients() {
-    return await fetch("http://localhost:8080/clients")
-        .then(res => res.json())
-        .then(res => {
-            return res;
-        })
-}
-
 async function apiGetMaintenance() {
     return await fetch("http://localhost:8080/maintenance")
         .then(res => res.json())
@@ -53,6 +66,7 @@ async function apiGetUnavailability() {
             return res;
         })
 }
+
 
 async function transformData(data) {
     let newData = []
@@ -81,30 +95,6 @@ async function transformData(data) {
     return newData
 }
 
-/*
-function displayReservation(data) {
-    if (data.length >= 1) {
-        let container = document.getElementById("listOfReservation")
-        data.forEach(element => {
-            container.innerHTML += `
-            <td>${element.id}</td>
-      <td>${element.clientName}</td>
-      <td>${element.vehiculeName}</td>
-      <td>${element.estimatedKm} km</td>
-      <td>${element.startReservation}</td>
-      <td>${element.endReservation}</td>
-            <td>${element.priceReservation} €</td>
-      <td style="display:flex;flex-direction:column;align-items:center">
-      <a href="reservations/editReservation.html">
-      <button class="edit" style="margin-bottom:5px;" onclick="editReservation(${element.id})">Modifier</button>
-      </a>
-      <button class="delete" style="margin-top:5px;">Supprimer</button>
-      </td>`;
-        });
-    }
-}
-*/
-
 
 function displayReservation(data) {
     if (data.length >= 1) {
@@ -120,7 +110,7 @@ function displayReservation(data) {
             <td>${element.priceReservation} €</td>
       <td style="display:flex;flex-direction:column;align-items:center">
       <button class="edit" style="margin-bottom:5px;" onclick="editReservation(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;">Supprimer</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteReservation(${element.id})">Supprimer</button>
       </td>`;
         });
     }
@@ -218,6 +208,18 @@ function editReservation(id) {
         localStorage.setItem("reservation", id)
     }
     window.location.href = "reservations/editReservation.html";
+}
+
+
+async function displayResultDelete(data) {
+    alert(data.message)
+    location.reload()
+}
+
+
+async function deleteReservation(id) {
+    event.preventDefault()
+    await displayResultDelete(await apiDeleteReservation(id));
 }
 
 allData()
