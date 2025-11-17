@@ -52,6 +52,18 @@ async function apiGetVehicle() {
         })
 }
 
+async function apiDeleteVehicle(id) {
+    return await fetch("http://localhost:8080/vehicles/" + id, {
+        method: "DELETE",
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        mode: 'cors'
+    })
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
 async function apiGetMaintenance() {
     return await fetch("http://localhost:8080/maintenance")
         .then(res => res.json())
@@ -135,7 +147,7 @@ function displayVehicle(data) {
             <td>${element.pricePerKilometer}</td>
             <td>
       <button class="edit" style="margin-bottom:5px;" onclick="editVehicle(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;" onclick="deleteReservation(${element.id})">Supprimer</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteVehicle(${element.id})">Supprimer</button>
             </td>`
                 ;
         });
@@ -233,9 +245,9 @@ async function deleteReservation(id) {
     await displayResultDelete(await apiDeleteReservation(id));
 }
 
-async function deleteVehile(id) {
+async function deleteVehicle(id) {
     event.preventDefault()
-    //await displayResultDelete(await apiDeleteReservation(id));
+    await displayResultDelete(await apiDeleteVehicle(id));
 }
 //#endregion DELETE
 

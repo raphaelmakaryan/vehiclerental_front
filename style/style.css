@@ -237,6 +237,7 @@ button.delete:hover {
 }
 
 .vehicle-card {
+    display: flex;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -244,6 +245,8 @@ button.delete:hover {
     padding: 15px;
     text-align: center;
     transition: transform 0.2s;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vehicle-card:hover {
