@@ -1,3 +1,4 @@
+//#region API
 async function apiGetReservation() {
     return await fetch("http://localhost:8080/reservations")
         .then(res => res.json())
@@ -66,8 +67,9 @@ async function apiGetUnavailability() {
             return res;
         })
 }
+//#endregion API
 
-
+//#region PAGE
 async function transformData(data) {
     let newData = []
     for (let index = 0; index < data.length; index++) {
@@ -132,8 +134,8 @@ function displayVehicle(data) {
             <td>${element.defaultPrice}</td>
             <td>${element.pricePerKilometer}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;">Modifier</button>
-      <button class="delete" style="margin-top:5px;">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editVehicle(${element.id})">Modifier</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteReservation(${element.id})">Supprimer</button>
             </td>`
                 ;
         });
@@ -202,7 +204,9 @@ async function allData() {
     displayMaintenance(await apiGetMaintenance())
     displayUnavailability(await apiGetUnavailability())
 }
+//#endregion PAGE
 
+//#region EDIT
 function editReservation(id) {
     if (localStorage.getItem("reservation") === null) {
         localStorage.setItem("reservation", id)
@@ -210,16 +214,31 @@ function editReservation(id) {
     window.location.href = "reservations/editReservation.html";
 }
 
+function editVehicle(id) {
+    if (localStorage.getItem("vehicle") === null) {
+        localStorage.setItem("vehicle", id)
+    }
+    window.location.href = "vehicles/editVehicle.html";
+}
+//#endregion EDIT
 
+//#region DELETE
 async function displayResultDelete(data) {
     alert(data.message)
     location.reload()
 }
-
 
 async function deleteReservation(id) {
     event.preventDefault()
     await displayResultDelete(await apiDeleteReservation(id));
 }
 
+async function deleteVehile(id) {
+    event.preventDefault()
+    //await displayResultDelete(await apiDeleteReservation(id));
+}
+//#endregion DELETE
+
+//#region CALL
 allData()
+//#endregion CALL

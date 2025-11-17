@@ -14,28 +14,33 @@ async function apiPostVehicle(data) {
 
 function typeDisplayVehicle() {
     let select = document.getElementById("typeForVehicle").value
-    let cylinder = document.getElementById("cylinder")
-    let volume = document.getElementById("volume")
+    let cylinderDiv = document.getElementById("cylinder")
+    let cylinderData = document.getElementById("cylinderVehicle")
+    let volumeDiv = document.getElementById("volume")
+    let volumeData = document.getElementById("volumeVehicle")
     switch (select) {
         case "utility":
-            cylinder.style.display = "none"
-            cylinder.removeAttribute("required");
-            volume.style.display = "block"
-            volume.setAttribute("required");
-
+            cylinderDiv.style.display = "none"
+            cylinderData.removeAttribute("required", "");
+            cylinderData.innerText = 0
+            volumeDiv.style.display = "block"
+            volumeData.setAttribute("required", "");
             break;
         case "motorcycle":
-            cylinder.style.display = "block"
-            cylinder.setAttribute("required");
-            volume.style.display = "none"
-            volume.removeAttribute("required");
+            cylinderDiv.style.display = "block"
+            cylinderData.setAttribute("required", "");
+            volumeDiv.style.display = "none"
+            volumeData.removeAttribute("required", "");
+            volumeData.innerText = 0
             break;
 
         default:
-            cylinder.style.display = "none"
-            cylinder.removeAttribute("required");
-            volume.style.display = "none"
-            volume.removeAttribute("required");
+            cylinderDiv.style.display = "none"
+            cylinderData.removeAttribute("required", "");
+            cylinderData.innerText = 0
+            volumeDiv.style.display = "none"
+            volumeData.removeAttribute("required", "");
+            volumeData.innerText = 0
             break;
     }
 }

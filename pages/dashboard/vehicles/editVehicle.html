@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Modifier vehicule</title>
+    <link rel="stylesheet" href="../../../style/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <h1>Dashboard Reservations</h1>
+            <h2>Your journey begins here with complete confidence.</h2>
+        </div>
+
+
+        <div class="header-actions">
+            <a href="../../../index.html" class="btn-register">Home Page</a>
+            <a href="../../vehicles/vehicles.html" class="btn-register">Our vehicles-choice</a>
+            <a href="../dashboard.html" class="btn-login">Dashboard</a>
+        </div>
+    </header>
+
+    <main>
+        <form onsubmit="formEditVehicle()">
+            <div style="display: flex;flex-direction: column; align-items: center;">
+                <h2>Modifier un vehicule</h2>
+            </div>
+            <input type="hidden" name="id" id="id">
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="typeVehicle">Type de vehicule ?</label>
+                    <select name="typeVehicle" required id="typeForVehicle" onchange="typeDisplayVehicle()">
+                        <option value="car">Car</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="utility">Utility</option>
+                    </select>
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="modelVehicle">Modele ?</label>
+                    <input type="text" required placeholder="Modele du vehicule" id="modelVehicle">
+                </div>
+            </div>
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="colorVehicle">Couleur :</label>
+                    <input type="text" name="colorVehicle" id="colorVehicle" required>
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="registrationVehicle">Plaque d'imatriculation :</label>
+                    <input type="text" name="registrationVehicle" id="registrationVehicle" required
+                        pattern="[A-Z]{2}-[0-9]{3}-[A-Z]{2}" placeholder="TT-000-BO">
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="horsepowerVehicle">Combien de cheveaux</label>
+                    <input type="number" name="horsepowerVehicle" id="horsepowerVehicle" required>
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="pricePerKilometerVehicle">Prix au kilometres :</label>
+                    <input type="number" name="pricePerKilometerVehicle" placeholder="Prix au kilometres"
+                        id="pricePerKilometerVehicle" required>
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem; display: none;" id="cylinder">
+                    <label for="cylinderVehicle">Combien de cylindre</label>
+                    <input type="number" name="cylinderVehicle" id="cylinderVehicle">
+                </div>
+                <div style="width: 100%; margin: 1rem; display: none;" id="volume">
+                    <label for="volumeVehicle">Combien de volume :</label>
+                    <input type="number" name="volumeVehicle" id="volumeVehicle">
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: column; align-items: center; width: 100%;">
+                <button type="submit">Edit a vehicle</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="../../../js/editVehicle.js"></script>
+
+</body>
+
+</html>

@@ -7,7 +7,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #dcdcdc; /* gris clair */
+    background: #dcdcdc;
+    /* gris clair */
     color: #222;
     line-height: 1.6;
     padding: 20px;
@@ -15,11 +16,13 @@ body {
 
 /* -------- HEADER -------- */
 header {
-    background: #000; /* noir */
+    background: #000;
+    /* noir */
     color: white;
     border-radius: 10px;
     margin-bottom: 40px;
-    padding: 40px 20px 20px 20px; /* plus de padding en haut */
+    padding: 40px 20px 20px 20px;
+    /* plus de padding en haut */
     position: relative;
     text-align: center;
 }
@@ -48,12 +51,14 @@ header h2 {
     font-weight: bold;
     text-decoration: none;
     color: #fff;
-    background: #e53935; /* rouge vif */
+    background: #e53935;
+    /* rouge vif */
     transition: 0.2s;
 }
 
 .header-actions a:hover {
-    background: #b71c1c; /* rouge foncé */
+    background: #b71c1c;
+    /* rouge foncé */
 }
 
 /* -------- MAIN -------- */
@@ -83,10 +88,11 @@ main img {
 /* -------- DASHBOARD -------- */
 .dashboard {
     margin: 30px auto;
-    background: #f0f0f0; /* gris clair */
+    background: #f0f0f0;
+    /* gris clair */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard h2 {
@@ -116,7 +122,8 @@ main img {
 }
 
 .tableStyle tbody tr:hover {
-    background: #ffeaea; /* léger rouge clair */
+    background: #ffeaea;
+    /* léger rouge clair */
 }
 
 /* -------- FORM -------- */
@@ -125,7 +132,7 @@ form {
     padding: 25px;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 form ul {
@@ -187,24 +194,26 @@ button.delete {
 }
 
 button.edit {
-    background: #e53935; 
+    background: #555;
+
     color: #fff;
 }
 
 button.edit:hover {
-    background: #b71c1c;
+    background: #333;
+    ;
 }
 
 button.delete {
-    background: #555; 
+    background: #e53935;
     color: #fff;
 }
 
 button.delete:hover {
-    background: #333;
+    background: #b71c1c
 }
 
-.button_add{
+.button_add {
     background-color: green;
     color: white;
 }
@@ -230,7 +239,7 @@ button.delete:hover {
 .vehicle-card {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 220px;
     padding: 15px;
     text-align: center;
@@ -283,7 +292,7 @@ footer {
     padding: 30px 20px;
     margin-top: 40px;
     border-radius: 10px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
 }
 
