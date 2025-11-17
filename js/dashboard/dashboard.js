@@ -103,6 +103,18 @@ async function apiGetUnavailability() {
             return res;
         })
 }
+
+async function apiDeleteUnavailability(id) {
+    return await fetch("http://localhost:8080/unavailability/" + id, {
+        method: "DELETE",
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        mode: 'cors'
+    })
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
 //#endregion API
 
 //#region PAGE
@@ -307,7 +319,7 @@ async function deleteMaintenance(id) {
 
 async function deleteUnavailability(id) {
     event.preventDefault()
-    //await displayResultDelete(await apiDeleteMaintenance(id));
+    await displayResultDelete(await apiDeleteUnavailability(id));
 }
 //#endregion DELETE
 
