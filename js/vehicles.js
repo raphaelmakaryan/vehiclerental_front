@@ -23,7 +23,7 @@ function displayCar(data) {
         if (data[index].type === "car") {
             container.innerHTML += `
                 <div class="vehicle-card">
-                    <img src="assets/${data[index].model}.png" alt="">
+                    <img src="../../assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
                     <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
@@ -42,7 +42,7 @@ function displayMoto(data) {
         if (data[index].type === "motorcycle") {
             container.innerHTML += `
                 <div class="vehicle-card">
-                    <img src="assets/${data[index].model}.png" alt="">
+                    <img src="../../assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
                     <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
@@ -61,7 +61,7 @@ function displayUtility(data) {
         if (data[index].type === "utility") {
             container.innerHTML += `
                 <div class="vehicle-card">
-                    <img src="assets/${data[index].model}.png" alt="">
+                    <img src="../../assets/${data[index].model}.png" alt="">
                     <h3>${data[index].model}</h3>
                     <p>${exemples[newIndex]}</p>
                     <button onclick="chooseBookVehicle(${data[index].id})">To book</button>
