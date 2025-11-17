@@ -24,45 +24,66 @@
     </header>
 
     <main>
-        <h2>Ajouter une vehicule</h2>
-        <form onsubmit="formAddReservation()">
+        <form onsubmit="formAddVehicle()">
             <div style="display: flex;flex-direction: column; align-items: center;">
-                <h2>Reservation</h2>
+                <h2>Ajouter un vehicule</h2>
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="idClient">IdClient ?</label>
-                    <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
-                </div>
-                <div style="width: 100%; margin: 1rem;">
-                    <label for="vehiculeChoose">Choissiez le véhicule</label>
-                    <select name="idVehicle" required id="vehiculeChoose">
-                        <option value="">Choose a vehicle</option>
+                    <label for="typeVehicle">Type de vehicule ?</label>
+                    <select name="typeVehicle" required id="typeForVehicle" onchange="typeDisplayVehicle()">
+                        <option value="car">Car</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="utility">Utility</option>
                     </select>
                 </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="modelVehicle">Modele ?</label>
+                    <input type="text" required placeholder="Modele du vehicule" id="modelVehicle">
+                </div>
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="startReservation">Departure date :</label>
-                    <input type="date" name="startReservation" id="startReservation" required>
+                    <label for="colorVehicle">Couleur :</label>
+                    <input type="text" name="colorVehicle" id="colorVehicle" required>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="endReservation">Return date :</label>
-                    <input type="date" name="endReservation" id="endReservation" required>
+                    <label for="registrationVehicle">Plaque d'imatriculation :</label>
+                    <input type="text" name="registrationVehicle" id="registrationVehicle" required
+                        pattern="[A-Z]{2}-[0-9]{3}-[A-Z]{2}" placeholder="TT-000-BO">
                 </div>
             </div>
 
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="estimatedKm">Estimated Km :</label>
-                    <input type="number" name="estimatedKm" placeholder="Estimation des kilometres" id="estimatedKm"
-                        required value="10">
+                    <label for="horsepowerVehicle">Combien de cheveaux</label>
+                    <input type="number" name="horsepowerVehicle" id="horsepowerVehicle" required>
+                </div>
+                <div style="width: 100%; margin: 1rem;">
+                    <label for="pricePerKilometerVehicle">Prix au kilometres :</label>
+                    <input type="number" name="pricePerKilometerVehicle" placeholder="Prix au kilometres"
+                        id="pricePerKilometerVehicle" required>
                 </div>
             </div>
 
-            <button type="submit">Create a reservations</button>
+            <div style="display: flex;flex-direction: row; align-items: center;">
+                <div style="width: 100%; margin: 1rem; display: none;" id="cylinder">
+                    <label for="cylinderVehicle">Combien de cylindre</label>
+                    <input type="number" name="cylinderVehicle" id="cylinderVehicle">
+                </div>
+                <div style="width: 100%; margin: 1rem; display: none;" id="volume">
+                    <label for="volumeVehicle">Combien de volume :</label>
+                    <input type="number" name="volumeVehicle" id="volumeVehicle">
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: column; align-items: center; width: 100%;">
+                <button type="submit">Create a vehicle</button>
+            </div>
         </form>
     </main>
+
+    <script src="../../../js/addVehicle.js"></script>
 
 </body>
 

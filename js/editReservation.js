@@ -88,6 +88,7 @@ editMainReservation()
 
 async function displayResultReservation(data) {
     alert(data.message)
+    deleteReservationLocal()
     window.location.href = "../dashboard.html";
 }
 
