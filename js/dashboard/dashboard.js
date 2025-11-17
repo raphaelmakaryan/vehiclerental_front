@@ -192,11 +192,11 @@ function displayMaintenance(data) {
         data.forEach(element => {
             container.innerHTML += `
             <td>${element.id}</td>
-            <td>${element.idVehicule}</td>
+            <td>${element.idVehicle}</td>
             <td>${element.idUnavailability}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;">Modifier</button>
-      <button class="delete" style="margin-top:5px;">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editMaintenance(${element.id})">Modifier</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteMaintenance(${element.id})">Supprimer</button>
             </td>`
                 ;
         });
@@ -250,6 +250,13 @@ function editClient(id) {
         localStorage.setItem("client", id)
     }
     window.location.href = "clients/editClients.html";
+}
+
+function editMaintenance(id) {
+    if (localStorage.getItem("maintenance") === null) {
+        localStorage.setItem("maintenance", id)
+    }
+    window.location.href = "maintenance/editMaintenance.html";
 }
 //#endregion EDIT
 
