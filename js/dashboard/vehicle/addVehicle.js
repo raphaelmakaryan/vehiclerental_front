@@ -51,25 +51,35 @@ async function displayResultVehicle(data) {
 }
 
 
+function extras(id) {
+    let search = document.getElementById(id);
+    if (search.value === "") {
+        return 0
+    } else {
+        return parseInt(search.value)
+    }
+}
+
 async function formAddVehicle() {
     event.preventDefault();
     const type = document.getElementById("typeForVehicle").value
     const model = document.getElementById("modelVehicle").value;
     const color = document.getElementById("colorVehicle").value;
     const registration = document.getElementById("registrationVehicle").value;
-    const horse_power = document.getElementById("horsepowerVehicle").value;
-    const cylinder = document.getElementById("cylinderVehicle") ? document.getElementById("cylinderVehicle").value : 0;
-    const volume = document.getElementById("volumeVehicle") ? document.getElementById("volumeVehicle").value : 0;
-    const price_per_kilometer = document.getElementById("pricePerKilometerVehicle").value;
+    const horsePower = parseInt(document.getElementById("horsepowerVehicle").value);
+    const cylinder = extras("cylinderVehicle")
+    const volume = extras("volumeVehicle")
+    const pricePerKilometer = parseInt(document.getElementById("pricePerKilometerVehicle").value);
     const vehicleData = {
         type,
         model,
         color,
         registration,
-        horse_power,
+        horsePower,
         cylinder,
+        pricePerKilometer,
         volume,
-        price_per_kilometer
     };
+    console.log(vehicleData)
     await displayResultVehicle(await apiPostVehicle(vehicleData));
 }
