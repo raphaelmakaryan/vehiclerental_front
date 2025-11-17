@@ -36,6 +36,18 @@ async function apiGetClientWithId(id) {
         })
 }
 
+async function apiDeleteClient(id) {
+    return await fetch("http://localhost:8080/clients/" + id, {
+        method: "DELETE",
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        mode: 'cors'
+    })
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        })
+}
+
 async function apiGetVehicleWithId(id) {
     return await fetch("http://localhost:8080/vehicles/" + id)
         .then(res => res.json())
@@ -166,8 +178,8 @@ function displayClients(data) {
             <td>${element.birthday}</td>
             <td>${element.obtaining_license}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;">Modifier</button>
-      <button class="delete" style="margin-top:5px;">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editClient(${element.id})">Modifier</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteClient(${element.id})">Supprimer</button>
             </td>`
                 ;
         });
@@ -232,6 +244,13 @@ function editVehicle(id) {
     }
     window.location.href = "vehicles/editVehicle.html";
 }
+
+function editClient(id) {
+    if (localStorage.getItem("client") === null) {
+        localStorage.setItem("client", id)
+    }
+    window.location.href = "clients/editClients.html";
+}
 //#endregion EDIT
 
 //#region DELETE
@@ -248,6 +267,11 @@ async function deleteReservation(id) {
 async function deleteVehicle(id) {
     event.preventDefault()
     await displayResultDelete(await apiDeleteVehicle(id));
+}
+
+async function deleteClient(id) {
+    event.preventDefault()
+    await displayResultDelete(await apiDeleteClient(id));
 }
 //#endregion DELETE
 
