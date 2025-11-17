@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Ajouter client</title>
+    <title>Dashboard - Add client</title>
     <link rel="stylesheet" href="../../../style/style.css">
 </head>
 
 <body>
     <header>
-        <div class="header-top">
-            <h1>Dashboard Reservations</h1>
+         <div class="header-top">
+            <h1>Dashboard</h1>
             <h2>Your journey begins here with complete confidence.</h2>
         </div>
 
@@ -27,25 +27,25 @@
     <main>
         <form onsubmit="formAddClient()">
             <div style="display: flex;flex-direction: column; align-items: center;">
-                <h2>Ajouter un client</h2>
+                <h2>Add a client</h2>
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="firstNameClient">Prénom</label>
+                    <label for="firstNameClient">First name</label>
                     <input type="text" name="firstNameClient" id="firstNameClient" required>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="LastNameClient">Nom de famille</label>
+                    <label for="LastNameClient">Last name</label>
                     <input type="text" name="LastNameClient" id="LastNameClient" required>
                 </div>
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="birthdayClient">Date de naissance</label>
+                    <label for="birthdayClient">Date of birth</label>
                     <input type="date" name="birthdayClient" id="birthdayClient" required>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="numberLicenseClient">Numéro de permis :</label>
+                    <label for="numberLicenseClient">License number</label>
                     <input type="text" name="numberLicenseClient" id="numberLicenseClient" required maxlength="13"
                         minlength="13">
                 </div>
@@ -53,7 +53,7 @@
 
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="obtainingLicense">Année d'obtension du permis</label>
+                    <label for="obtainingLicense">Year of obtaining the license</label>
                     <input type="number" name="obtainingLicense" id="obtainingLicense" required minlength="4"
                         maxlength="4"
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">

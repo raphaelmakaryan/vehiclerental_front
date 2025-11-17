@@ -159,8 +159,8 @@ function displayReservation(data) {
       <td>${element.endReservation}</td>
             <td>${element.priceReservation} €</td>
       <td style="display:flex;flex-direction:column;align-items:center">
-      <button class="edit" style="margin-bottom:5px;" onclick="editReservation(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;" onclick="deleteReservation(${element.id})">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editReservation(${element.id})">Edit</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteReservation(${element.id})">Delete</button>
       </td>`;
         });
     }
@@ -182,8 +182,8 @@ function displayVehicle(data) {
             <td>${element.defaultPrice}</td>
             <td>${element.pricePerKilometer}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;" onclick="editVehicle(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;" onclick="deleteVehicle(${element.id})">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editVehicle(${element.id})">Edit</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteVehicle(${element.id})">Delete</button>
             </td>`
                 ;
         });
@@ -202,8 +202,8 @@ function displayClients(data) {
             <td>${element.birthday}</td>
             <td>${element.obtaining_license}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;" onclick="editClient(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;" onclick="deleteClient(${element.id})">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editClient(${element.id})">Edit</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteClient(${element.id})">Delete</button>
             </td>`
                 ;
         });
@@ -219,8 +219,8 @@ function displayMaintenance(data) {
             <td>${element.idVehicle}</td>
             <td>${element.idUnavailability}</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;" onclick="editMaintenance(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;" onclick="deleteMaintenance(${element.id})">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;" onclick="editMaintenance(${element.id})">Edit</button>
+      <button class="delete" style="margin-top:5px;" onclick="deleteMaintenance(${element.id})">Delete</button>
             </td>`
                 ;
         });
@@ -237,8 +237,8 @@ function displayUnavailability(data) {
             <td>${element.description}</td>
             <td>${element.time} days</td>
             <td>
-      <button class="edit" style="margin-bottom:5px;"  onclick="editUnavailability(${element.id})">Modifier</button>
-      <button class="delete" style="margin-top:5px;"   onclick="deleteUnavailability(${element.id})">Supprimer</button>
+      <button class="edit" style="margin-bottom:5px;"  onclick="editUnavailability(${element.id})">Edit</button>
+      <button class="delete" style="margin-top:5px;"   onclick="deleteUnavailability(${element.id})">Delete</button>
             </td>`
                 ;
         });

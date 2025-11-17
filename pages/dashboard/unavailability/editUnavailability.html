@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Modifier un soucis</title>
+    <title>Dashboard - Edit unavailability</title>
     <link rel="stylesheet" href="../../../style/style.css">
 </head>
 
 <body>
     <header>
         <div class="header-top">
-            <h1>Dashboard Reservations</h1>
+            <h1>Dashboard</h1>
             <h2>Your journey begins here with complete confidence.</h2>
         </div>
 
@@ -26,12 +26,12 @@
     <main>
         <form onsubmit="formEditUnavailability()">
             <div style="display: flex;flex-direction: column; align-items: center;">
-                <h2>Modifier un soucis</h2>
+                <h2>Edit unavailability</h2>
             </div>
             <input type="hidden" name="id" id="id">
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="typeVehicle">Type de vehicule ?</label>
+                    <label for="typeVehicle">Vehicle type?</label>
                     <select name="typeVehicle" required id="typeForVehicle">
                     </select>
                 </div>
@@ -42,7 +42,7 @@
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="timeVehicle">Temps :</label>
+                    <label for="timeVehicle">Time :</label>
                     <input type="number" name="timeVehicle" id="timeVehicle" required>
                 </div>
             </div>

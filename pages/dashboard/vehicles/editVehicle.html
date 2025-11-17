@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Modifier vehicule</title>
+    <title>Dashboard - Edit vehicle</title>
     <link rel="stylesheet" href="../../../style/style.css">
 </head>
 
 <body>
     <header>
-        <div class="header-top">
-            <h1>Dashboard Reservations</h1>
+         <div class="header-top">
+            <h1>Dashboard</h1>
             <h2>Your journey begins here with complete confidence.</h2>
         </div>
 
@@ -26,12 +26,12 @@
     <main>
         <form onsubmit="formEditVehicle()">
             <div style="display: flex;flex-direction: column; align-items: center;">
-                <h2>Modifier un vehicule</h2>
+                <h2>EDit vehicle</h2>
             </div>
             <input type="hidden" name="id" id="id">
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="typeVehicle">Type de vehicule ?</label>
+                    <label for="typeVehicle">Vehicle type?</label>
                     <select name="typeVehicle" required id="typeForVehicle" onchange="typeDisplayVehicle()">
                         <option value="car">Car</option>
                         <option value="motorcycle">Motorcycle</option>
@@ -39,13 +39,13 @@
                     </select>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="modelVehicle">Modele ?</label>
+                    <label for="modelVehicle">Model ?</label>
                     <input type="text" required placeholder="Modele du vehicule" id="modelVehicle">
                 </div>
             </div>
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="colorVehicle">Couleur :</label>
+                    <label for="colorVehicle">Color :</label>
                     <input type="text" name="colorVehicle" id="colorVehicle" required>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
@@ -57,11 +57,11 @@
 
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="horsepowerVehicle">Combien de cheveaux</label>
+                    <label for="horsepowerVehicle">License plate</label>
                     <input type="number" name="horsepowerVehicle" id="horsepowerVehicle" required>
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="pricePerKilometerVehicle">Prix au kilometres :</label>
+                    <label for="pricePerKilometerVehicle">How many horsepower?</label>
                     <input type="number" name="pricePerKilometerVehicle" placeholder="Prix au kilometres"
                         id="pricePerKilometerVehicle" required>
                 </div>
@@ -69,11 +69,11 @@
 
             <div style="display: flex;flex-direction: row; align-items: center;">
                 <div style="width: 100%; margin: 1rem; display: none;" id="cylinder">
-                    <label for="cylinderVehicle">Combien de cylindre</label>
+                    <label for="cylinderVehicle">How many cylinders</label>
                     <input type="number" name="cylinderVehicle" id="cylinderVehicle">
                 </div>
                 <div style="width: 100%; margin: 1rem; display: none;" id="volume">
-                    <label for="volumeVehicle">Combien de volume :</label>
+                    <label for="volumeVehicle">How much volume?</label>
                     <input type="number" name="volumeVehicle" id="volumeVehicle">
                 </div>
             </div>

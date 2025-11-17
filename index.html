@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rental</title>
+    <title>Vehicle Rental - Homepage</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -35,9 +35,8 @@
                     <input type="number" name="idClient" placeholder="ID du client" id="idClient" required value="1">
                 </div>
                 <div style="width: 100%; margin: 1rem;">
-                    <label for="vehiculeChoose">Choissiez le véhicule</label>
+                    <label for="vehiculeChoose">Choose the vehicle</label>
                     <select name="idVehicle" required id="vehiculeChoose">
-                        <option value="">Choose a vehicle</option>
                     </select>
                 </div>
             </div>
@@ -60,7 +59,9 @@
                 </div>
             </div>
 
-            <button type="submit">Create a reservations</button>
+            <div style="display: flex;flex-direction: column; align-items: center;">
+                <button type="submit">Create a reservations</button>
+            </div>
         </form>
         <img src="assets/vehicles1.png" alt="photo of rental vehicles">
     </main>
